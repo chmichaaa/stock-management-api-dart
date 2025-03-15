@@ -211,40 +211,65 @@ Future<void> fetchProducts() async {
   }
 }
 ```
-### 2. Ajouter un produit
+### 2. Ajouter une commande
 
 ```dart
-/// ✅ Ajouter un produit
-Future<void> addProduct() async {
-  stdout.write("📝 Nom du produit : ");
-  String? name = stdin.readLineSync();
+/// ✅ Ajouter une commande
+Future<void> addOrder() async {
+  List<Map<String, dynamic>> produits = [];
+  double total = 0.0;
 
-  stdout.write("💰 Prix : ");
-  double? price = double.tryParse(stdin.readLineSync() ?? "");
+  while (true) {
+    stdout.write("🛒 Nom du produit (ou 'fin' pour terminer) : ");
+    String? name = stdin.readLineSync();
 
-  stdout.write("📦 Stock : ");
-  int? stock = int.tryParse(stdin.readLineSync() ?? "");
+    if (name == null || name.toLowerCase() == 'fin') break;
 
-  stdout.write("📁 Catégorie : ");
-  String? category = stdin.readLineSync();
+    stdout.write("📦 Quantité : ");
+    int? quantity = int.tryParse(stdin.readLineSync() ?? "");
 
-  if (name == null || price == null || stock == null || category == null) {
-    print("❌ Données invalides. Veuillez réessayer.");
+    if (quantity == null || quantity <= 0) {
+      print("❌ Quantité invalide. Réessayez.");
+      continue;
+    }
+
+    var product = await _getProductByName(name);
+    if (product == null) {
+      print("❌ Produit introuvable.");
+      continue;
+    }
+
+    if (quantity > product['stock']) {
+      print("❌ Stock insuffisant.");
+      continue;
+    }
+
+    // Mise à jour du stock
+    product['stock'] -= quantity;
+    await _updateProductStock(product['id'], product['stock']);
+
+    total += product['prix'] * quantity;
+    produits.add({"nom": name, "quantite": quantity});
+  }
+
+  if (produits.isEmpty) {
+    print("❌ Aucune commande enregistrée.");
     return;
   }
 
-  Map<String, dynamic> product = {
-    "nom": name,
-    "prix": price,
-    "stock": stock,
-    "categorie": category,
+  int newOrderId = await _getNextOrderId();
+
+  Map<String, dynamic> order = {
+    "id": newOrderId,
+    "produits": produits,
+    "total": total,
   };
 
-  final response = await _sendPostRequest("$apiUrl/produits", product);
+  final response = await _sendPostRequest("$apiUrl/commandes", order);
   if (response != null && response.statusCode == 201) {
-    print("✅ Produit ajouté avec succès !");
+    print("✅ Commande ajoutée avec succès !");
   } else {
-    print("❌ Erreur lors de l'ajout du produit.");
+    print("❌ Erreur lors de l'ajout de la commande.");
   }
 }
 ```
