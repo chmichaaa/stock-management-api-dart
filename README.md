@@ -277,13 +277,23 @@ Future<void> addOrder() async {
 ---
 
 ## 📸 Captures d'écran
-### Test API avec Postman
+### - Test API avec Postman
 
-Voici à quoi cela ressemble lors des tests dans Postman :
-Requête GET /produits :
+#### Voici à quoi cela ressemble lors des tests dans Postman :
 
-Requête POST /produits :
+- Requête GET /commandes :
 
-### Interface Client Dart
+  
+![GET commandes](screenshots/GET_COMMANDES.png)
 
-Voici un aperçu de l'interface du client Dart pour afficher les produits et ajouter des commandes :
+
+- Requête POST /produits :
+
+  
+![POST produits](screenshots/POST_PRODUITS.png)
+
+
+
+### - Interface Client Dart
+
+#### Voici un aperçu de l'interface du client Dart pour ajouter les produits :
