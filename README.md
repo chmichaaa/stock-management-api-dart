@@ -38,6 +38,16 @@ Voici la structure des dossiers et fichiers :
 │   ├── package-lock.json             # Fichier de verrouillage des dépendances pour le backend Node.js.
 │   ├── package.json                  # Définition des dépendances et scripts pour le serveur API.
 │   └── server.js                     # Code du serveur backend en Node.js pour gérer les requêtes HTTP (GET, POST) liées aux produits et commandes.
+│
+├── screenshots/                      # Contient des captures d'écran du projet en action
+│   ├── S1.png                        # Screenshot de la première étape de l'ajout de produits
+│   ├── S2.png                        # Screenshot de la deuxième étape de l'ajout de produits
+│   ├── S3.png                        # Screenshot de la troisième étape de l'ajout de produits
+│   ├── S4.png                        # Screenshot de la quatrième étape de l'ajout de produits
+│   ├── S5.png                        # Screenshot de la cinquième étape de l'ajout de produits
+│   ├── S6.png                        # Screenshot de la sixième étape de l'ajout de produits
+│   ├── GET_COMMANDES.png             # Screenshot de la requête GET /commandes dans Postman
+│   └── POST_PRODUITS.png             # Screenshot de la requête POST /produits dans Postman
 │ 
 ├── README.md                         # Documentation du projet.
 └── .gitignore                        # Liste des fichiers et répertoires à ignorer par Git.
