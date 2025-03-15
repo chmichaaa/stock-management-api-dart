@@ -297,3 +297,20 @@ Future<void> addOrder() async {
 ### - Interface Client Dart
 
 #### Voici un aperçu de l'interface du client Dart pour ajouter les produits :
+### Écran 1
+![Écran 1](screenshots/S1.png)
+
+### Écran 2
+![Écran 2](screenshots/S2.png)
+
+### Écran 3
+![Écran 3](screenshots/S3.png)
+
+### Écran 4
+![Écran 4](screenshots/S4.png)
+
+### Écran 5
+![Écran 5](screenshots/S5.png)
+
+### Écran 6
+![Écran 6](screenshots/S6.png)
