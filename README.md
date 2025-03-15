@@ -2,6 +2,8 @@
 
 Ce projet implémente une **API REST** en **Express.js** permettant de gérer des produits et des commandes, et un **client Dart** qui interagit avec cette API pour récupérer et ajouter des produits et des commandes.
 
+---
+
 ## 🎯 Objectifs du Projet
 
 L'objectif de ce projet est de créer une solution permettant :
@@ -13,7 +15,9 @@ L'objectif de ce projet est de créer une solution permettant :
 2. **Frontend (Client Dart)** :
    - Afficher la liste des produits et des commandes récupérées depuis l'API.
    - Permettre l'ajout de nouveaux produits et commandes.
-  
+
+  ---
+
 ## 🗂 Structure du Projet
 
 Voici la structure des dossiers et fichiers :
@@ -38,6 +42,7 @@ Voici la structure des dossiers et fichiers :
 ├── README.md                         # Documentation du projet.
 └── .gitignore                        # Liste des fichiers et répertoires à ignorer par Git.
 ```
+---
 
 
 ## ⚙️ Fonctionnalités
@@ -59,6 +64,7 @@ Le client Dart offre les fonctionnalités suivantes :
 - **Ajouter un produit ➕** : Utiliser une requête POST pour ajouter un produit à la liste.
 - **Afficher les commandes 📦** : Effectuer une requête GET pour récupérer et afficher les commandes.
 - **Ajouter une commande 📝** : Utiliser une requête POST pour ajouter une commande.
+---
 
 ## 📋 Prérequis
 
@@ -66,6 +72,8 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants :
 
 - [Node.js](https://nodejs.org/en/) pour le serveur backend.
 - [Dart SDK](https://dart.dev/get-dart) pour le client Dart.
+
+---
 
 ## 🔧 Installation
 
@@ -124,6 +132,7 @@ dart run main.dart
 
 Cela démarrera l'application Dart et elle sera accessible sur votre appareil ou émulateur.
 
+---
 
 ## 🔧 Fonctionnement de l'API
 
@@ -178,6 +187,8 @@ app.post("/produits", (req, res) => {
     res.status(201).send("✅ Commande ajoutée avec succès !");
 });
 ```
+
+---
 
 ## 🤖 Interaction avec l'API - Client Dart
 ### 1. Récupérer et afficher les produits
@@ -238,6 +249,7 @@ Future<void> addProduct() async {
 }
 ```
 
+---
 
 ## 📸 Captures d'écran
 ### Test API avec Postman
