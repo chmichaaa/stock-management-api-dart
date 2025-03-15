@@ -23,19 +23,19 @@ L'objectif de ce projet est de créer une solution permettant :
 Voici la structure des dossiers et fichiers :
 ```
 /gestion-stock-app/
-├── application_mobile/               # Application Flutter mobile
-│   ├── main.dart                     # Point d'entrée de l'application mobile, gère l'UI et la logique d'interaction avec l'API.
-│   ├── pubspec.yaml                  # Fichier de configuration pour Flutter, incluant les dépendances et les configurations du projet mobile.
-│   └── pubspec.lock                  # Fichier généré par Flutter pour verrouiller les versions des dépendances.
+├── application_mobile/               
+│   ├── main.dart                     # Interface simple Dart, gère l'UI et la logique d'interaction avec l'API.
+│   ├── pubspec.yaml                  # Fichier de configuration pour Dart, incluant les dépendances et les configurations du projet mobile.
+│   └── pubspec.lock                  # Fichier généré par Dart pour verrouiller les versions des dépendances.
 │ 
-├── client_api/                       # Client API Flutter pour interagir avec l'API serveur
+├── client_api/                       # Client API Dart pour interagir avec l'API serveur
 │   ├── client_api.dart               # Contient des méthodes statiques pour interagir avec l'API (ajouter des produits/commandes, récupérer la liste des produits/commandes).
-│   ├── pubspec.yaml                  # Configuration pour les dépendances du client API Flutter.
+│   ├── pubspec.yaml                  # Configuration pour les dépendances du client API Dart.
 │   └── pubspec.lock                  # Fichier généré pour verrouiller les versions des dépendances.
 │ 
 ├── serveur_api/                      # Backend qui gère l'API
 │   ├── db.json                       # Fichier JSON contenant les données persistantes des produits et commandes.
-│   ├── package-lock.json             # Fichier de verrouillage des dépendances pour le backend Node.js.
+│   ├── package-lock.json             # Fichier de verrouillage des dépendances pour le backend Express/Node.js.
 │   ├── package.json                  # Définition des dépendances et scripts pour le serveur API.
 │   └── server.js                     # Code du serveur backend en Node.js pour gérer les requêtes HTTP (GET, POST) liées aux produits et commandes.
 │
