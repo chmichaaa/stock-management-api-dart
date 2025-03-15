@@ -1,8 +1,8 @@
-# 🚀 **Gestion de Stock - API REST + Client Dart**
+# 📦 Gestion de Stock - API REST + Client Dart
 
-Ce projet implémente une **API REST** en **Express.js** permettant de gérer des produits et des commandes, ainsi qu'un **client Dart** qui interagit avec cette API pour récupérer et ajouter des produits et des commandes.
+Ce projet implémente une **API REST** en **Express.js** permettant de gérer des produits et des commandes, et un **client Dart** qui interagit avec cette API pour récupérer et ajouter des produits et des commandes.
 
-## 🎯 **Objectifs du Projet**
+## 🎯 Objectifs du Projet
 
 L'objectif de ce projet est de créer une solution permettant :
 
@@ -13,214 +13,242 @@ L'objectif de ce projet est de créer une solution permettant :
 2. **Frontend (Client Dart)** :
    - Afficher la liste des produits et des commandes récupérées depuis l'API.
    - Permettre l'ajout de nouveaux produits et commandes.
+  
 
-## ⚙️ **Fonctionnalités**
 
-### **API REST (Express.js)**
+
+## ⚙️ Fonctionnalités
+
+### API REST (Express.js)
 L'API fournit les fonctionnalités suivantes :
 
-- **GET /produits** : Récupère la liste de tous les produits disponibles.
-- **POST /produits** : Permet d'ajouter un nouveau produit.
-- **GET /commandes** : Récupère la liste de toutes les commandes.
-- **POST /commandes** : Permet de créer une nouvelle commande.
+- **GET /produits 🛍️** : Récupère la liste de tous les produits disponibles.
+- **POST /produits ➕** : Permet d'ajouter un nouveau produit.
+- **GET /commandes 📦** : Récupère la liste de toutes les commandes.
+- **POST /commandes 📝** : Permet de créer une nouvelle commande.
 
 Les données sont stockées dans un fichier `db.json` et chaque modification est immédiatement sauvegardée.
 
-### **Client Dart (Frontend)**
+### Client Dart (Frontend)
 Le client Dart offre les fonctionnalités suivantes :
 
-- **🛒 Afficher les produits** : Effectuer une requête GET pour récupérer et afficher les produits.
-- **➕ Ajouter un produit** : Utiliser une requête POST pour ajouter un produit à la liste.
-- **📦 Afficher les commandes** : Effectuer une requête GET pour récupérer et afficher les commandes.
-- **➕ Ajouter une commande** : Utiliser une requête POST pour ajouter une commande.
+- **Afficher les produits 🛍️** : Effectuer une requête GET pour récupérer et afficher les produits.
+- **Ajouter un produit ➕** : Utiliser une requête POST pour ajouter un produit à la liste.
+- **Afficher les commandes 📦** : Effectuer une requête GET pour récupérer et afficher les commandes.
+- **Ajouter une commande 📝** : Utiliser une requête POST pour ajouter une commande.
 
-## 🔧 **Prérequis**
+## 📋 Prérequis
 
 Avant de commencer, assurez-vous d'avoir installé les outils suivants :
 
 - [Node.js](https://nodejs.org/en/) pour le serveur backend.
 - [Dart SDK](https://dart.dev/get-dart) pour le client Dart.
 
-## 💻 **Installation**
+## 🔧 Installation
 
-### 1. **Cloner le dépôt**
+### 1. Cloner le dépôt
 
 Clonez le projet depuis GitHub :
 
-``bash
+```bash
 git clone https://github.com/chemin-de-votre-repo/gestion-stock-dart.git
 cd gestion-stock-dart
+```
 
-2. Installer les dépendances
+### 2. Installer les dépendances
 Backend - API REST (Express.js)
 
 Accédez au dossier du serveur API :
 
+```bash
 cd serveur_api
+```
 
 Installez les dépendances avec npm :
 
+```bash
 npm install
+```
 
 Démarrer le serveur
 
 Lancez le serveur Express.js :
 
+```bash
 node server.js
+```
 
-Le serveur sera accessible à l'URL suivante : http://localhost:3000.
+Le serveur sera accessible à l'URL suivante : `http://localhost:3000.`
 Frontend - Client Dart
 
 Accédez au dossier de l'application Flutter :
 
+```bash
 cd ../application_mobile
+```
 
 Installez les dépendances Dart :
 
+```bash
 dart pub get
+```
 
 Lancer l'application
 
 Lancez l'application Dart :
 
+```bash
 dart run main.dart
+```
 
 Cela démarrera l'application Dart et elle sera accessible sur votre appareil ou émulateur.
-🗂️ Structure du Projet
+
+## 🗂 Structure du Projet
 
 Voici la structure des dossiers et fichiers :
-
+```
 /gestion-stock-app/
 ├── application_mobile/               # Application Flutter mobile
-│   ├── main.dart                     # Point d'entrée de l'application mobile
-│   ├── pubspec.yaml                  # Configuration Flutter
-│   └── pubspec.lock                  # Verrouillage des versions des dépendances
+│   ├── main.dart                     # Point d'entrée de l'application mobile, gère l'UI et la logique d'interaction avec l'API.
+│   ├── pubspec.yaml                  # Fichier de configuration pour Flutter, incluant les dépendances et les configurations du projet mobile.
+│   └── pubspec.lock                  # Fichier généré par Flutter pour verrouiller les versions des dépendances.
 │ 
-├── client_api/                       # Client API Flutter pour interagir avec l'API
-│   ├── client_api.dart               # Méthodes pour interagir avec l'API
-│   ├── pubspec.yaml                  # Configuration des dépendances du client API
-│   └── pubspec.lock                  # Fichier de verrouillage des dépendances
+├── client_api/                       # Client API Flutter pour interagir avec l'API serveur
+│   ├── client_api.dart               # Contient des méthodes statiques pour interagir avec l'API (ajouter des produits/commandes, récupérer la liste des produits/commandes).
+│   ├── pubspec.yaml                  # Configuration pour les dépendances du client API Flutter.
+│   └── pubspec.lock                  # Fichier généré pour verrouiller les versions des dépendances.
 │ 
-├── serveur_api/                      # Backend API Node.js
-│   ├── db.json                       # Données persistantes des produits/commandes
-│   ├── package-lock.json             # Verrouillage des dépendances pour le backend
-│   ├── package.json                  # Définition des dépendances et scripts
-│   └── server.js                     # Code du serveur backend
+├── serveur_api/                      # Backend qui gère l'API
+│   ├── db.json                       # Fichier JSON contenant les données persistantes des produits et commandes.
+│   ├── package-lock.json             # Fichier de verrouillage des dépendances pour le backend Node.js.
+│   ├── package.json                  # Définition des dépendances et scripts pour le serveur API.
+│   └── server.js                     # Code du serveur backend en Node.js pour gérer les requêtes HTTP (GET, POST) liées aux produits et commandes.
 │ 
-├── README.md                         # Documentation du projet
-└── .gitignore                        # Liste des fichiers à ignorer par Git
+├── README.md                         # Documentation du projet.
+└── .gitignore                        # Liste des fichiers et répertoires à ignorer par Git.
+```
+## 🔧 Fonctionnement de l'API
 
-🔧 Fonctionnement de l'API
-
-    Route GET /produits
-    Récupère tous les produits stockés dans db.json :
-
-// serveur_api/server.js
-app.get('/produits', (req, res) => {
-  fs.readFile('./db.json', 'utf8', (err, data) => {
-    if (err) return res.status(500).send('Erreur de lecture.');
-    const produits = JSON.parse(data).produits;
-    res.status(200).json(produits);
-  });
+### 1. Route GET /produits 🛍️
+   
+Récupère tous les produits stockés dans `db.json` :
+```js
+// Route GET pour récupérer tous les produits
+app.get("/produits", (req, res) => {
+    const data = lireDonnees();
+    res.json(data.produits);
 });
+```
+### 2. Route POST /produits ➕
 
-    Route POST /produits
-    Ajoute un nouveau produit :
+Ajoute un nouveau produit :
 
-// serveur_api/server.js
-app.post('/produits', express.json(), (req, res) => {
-  const produit = req.body;
-  fs.readFile('./db.json', 'utf8', (err, data) => {
-    if (err) return res.status(500).send('Erreur de lecture.');
-    const db = JSON.parse(data);
-    db.produits.push(produit);
-    fs.writeFile('./db.json', JSON.stringify(db), (err) => {
-      if (err) return res.status(500).send('Erreur de sauvegarde.');
-      res.status(201).json(produit);
-    });
-  });
+```js
+// Route POST pour ajouter un produit
+app.post("/produits", (req, res) => {
+    const data = lireDonnees();
+    const nouveauProduit = req.body;
+    data.produits.push(nouveauProduit);
+    sauvegarderDonnees(data);
+    res.status(201).send("✅ Produit ajouté avec succès !");
 });
+```
 
-    Route GET /commandes
-    Récupère toutes les commandes :
+### 3. Route GET /commandes 📦
 
-// serveur_api/server.js
-app.get('/commandes', (req, res) => {
-  fs.readFile('./db.json', 'utf8', (err, data) => {
-    if (err) return res.status(500).send('Erreur de lecture.');
-    const commandes = JSON.parse(data).commandes;
-    res.status(200).json(commandes);
-  });
+Récupère toutes les commandes :
+
+```js
+// Route GET pour récupérer toutes les commandes
+app.get("/commandes", (req, res) => {
+    const data = lireDonnees();
+    res.json(data.commandes);
 });
+```
 
-    Route POST /commandes
-    Crée une nouvelle commande :
+### 4. Route POST /commandes 📝
 
-// serveur_api/server.js
-app.post('/commandes', express.json(), (req, res) => {
-  const commande = req.body;
-  fs.readFile('./db.json', 'utf8', (err, data) => {
-    if (err) return res.status(500).send('Erreur de lecture.');
-    const db = JSON.parse(data);
-    db.commandes.push(commande);
-    fs.writeFile('./db.json', JSON.stringify(db), (err) => {
-      if (err) return res.status(500).send('Erreur de sauvegarde.');
-      res.status(201).json(commande);
-    });
-  });
+Crée une nouvelle commande :
+
+```js
+// Route POST pour créer une commande
+app.post("/produits", (req, res) => {
+    const data = lireDonnees();
+    const nouveauProduit = req.body;
+    data.produits.push(nouveauProduit);
+    sauvegarderDonnees(data);
+    res.status(201).send("✅ Commande ajoutée avec succès !");
 });
+```
 
-🤖 Interaction avec l'API - Client Dart
-1. Récupérer et afficher les produits
+## 🤖 Interaction avec l'API - Client Dart
+### 1. Récupérer et afficher les produits
+```dart
+/// ✅ Récupérer et afficher tous les produits
+Future<void> fetchProducts() async {
+  final response = await _sendGetRequest("$apiUrl/produits");
 
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-
-Future<void> getProduits() async {
-  final response = await http.get(Uri.parse('http://localhost:3000/produits'));
-
-  if (response.statusCode == 200) {
-    var produits = jsonDecode(response.body);
-    print('Produits disponibles :');
-    for (var produit in produits) {
-      print('Nom: ${produit['nom']}, Prix: ${produit['prix']}');
+  if (response != null) {
+    List<dynamic> products = jsonDecode(response.body);
+    if (products.isEmpty) {
+      print("📦 Aucun produit disponible.");
+    } else {
+      print("\n📜 Liste des produits disponibles:");
+      for (var product in products) {
+        print(
+            "🔹 ${product['nom']} (${product['categorie']}) - ${product['prix']} DH | Stock: ${product['stock']}");
+      }
     }
-  } else {
-    print('Erreur lors de la récupération des produits.');
   }
 }
+```
+### 2. Ajouter un produit
 
-2. Ajouter un produit
+```dart
+/// ✅ Ajouter un produit
+Future<void> addProduct() async {
+  stdout.write("📝 Nom du produit : ");
+  String? name = stdin.readLineSync();
 
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+  stdout.write("💰 Prix : ");
+  double? price = double.tryParse(stdin.readLineSync() ?? "");
 
-Future<void> ajouterProduit(String nom, double prix, int stock, String categorie) async {
-  final response = await http.post(
-    Uri.parse('http://localhost:3000/produits'),
-    headers: {'Content-Type': 'application/json'},
-    body: jsonEncode({
-      'nom': nom,
-      'prix': prix,
-      'stock': stock,
-      'categorie': categorie
-    }),
-  );
+  stdout.write("📦 Stock : ");
+  int? stock = int.tryParse(stdin.readLineSync() ?? "");
 
-  if (response.statusCode == 201) {
-    print('Produit ajouté avec succès');
+  stdout.write("📁 Catégorie : ");
+  String? category = stdin.readLineSync();
+
+  if (name == null || price == null || stock == null || category == null) {
+    print("❌ Données invalides. Veuillez réessayer.");
+    return;
+  }
+
+  Map<String, dynamic> product = {
+    "nom": name,
+    "prix": price,
+    "stock": stock,
+    "categorie": category,
+  };
+
+  final response = await _sendPostRequest("$apiUrl/produits", product);
+  if (response != null && response.statusCode == 201) {
+    print("✅ Produit ajouté avec succès !");
   } else {
-    print('Erreur lors de l\'ajout du produit.');
+    print("❌ Erreur lors de l'ajout du produit.");
   }
 }
+```
 
-📸 Captures d'écran
-Test API avec Postman
+
+## 📸 Captures d'écran
+### Test API avec Postman
 
 Voici à quoi cela ressemble lors des tests dans Postman :
-Requête GET /produits
-Requête POST /produits
-Interface Client Dart
+Requête GET /produits :
+
+Requête POST /produits :
+
+### Interface Client Dart
 
 Voici un aperçu de l'interface du client Dart pour afficher les produits et ajouter des commandes :
-
