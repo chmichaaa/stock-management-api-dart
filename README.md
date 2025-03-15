@@ -82,7 +82,7 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants :
 - Clonez le projet depuis GitHub :
 
 ```bash
-git clone https://github.com/chemin-de-votre-repo/gestion-stock-dart.git
+git clone https://github.com/chmichaaa/stock-management-api-dart.git
 cd gestion-stock-dart
 ```
 
